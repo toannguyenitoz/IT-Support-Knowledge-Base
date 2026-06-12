@@ -18,13 +18,13 @@ This repository is built by **Xuan Toan Nguyen**, an Adelaide-based IT Support a
 
 This knowledge base demonstrates practical troubleshooting, documentation and technical support skills for roles such as:
 
-- IT Support Officer
-- Service Desk Analyst
-- Desktop Support Technician
-- ICT Support Officer
-- Junior System Administrator
-- Microsoft 365 Support
-- Cloud Support
+* IT Support Officer
+* Service Desk Analyst
+* Desktop Support Technician
+* ICT Support Officer
+* Junior System Administrator
+* Microsoft 365 Support
+* Cloud Support
 
 The content is organised by technology area. Each section has its own README and table of contents.
 
@@ -32,16 +32,16 @@ The content is organised by technology area. Each section has its own README and
 
 ## Knowledge Base Sections
 
-| Section | Description |
-|---|---|
-| [Outlook & Exchange Online](./Outlook/README.md) | Outlook client issues, Exchange Online, shared mailboxes, mail flow, message trace, calendar permissions and mobile email support |
-| [Microsoft 365](./Microsoft365/README.md) | Microsoft 365 administration, licensing, service health, Defender and user management |
-| [Entra ID](./EntraID/README.md) | Identity, MFA, Conditional Access, Entra ID fundamentals and authentication troubleshooting |
-| [Teams](./Teams/README.md) | Microsoft Teams meetings, add-ins, permissions, calling and collaboration support |
-| [Windows](./Windows/README.md) | Windows 10/11, Windows Server concepts, DNS, DHCP, Group Policy and endpoint troubleshooting |
-| [PowerShell](./PowerShell/README.md) | PowerShell scripts for Microsoft 365, Exchange Online, reporting and administration |
-| [Interview Questions](./InterviewQuestions/README.md) | IT Support, Microsoft 365, Windows, networking and Systems Administration interview preparation |
-| [Diagrams](./Diagrams/README.md) | Mermaid diagrams and troubleshooting flows |
+| Section                                               | Description                                                                                                                       |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| [Outlook & Exchange Online](./Outlook/README.md)      | Outlook client issues, Exchange Online, shared mailboxes, mail flow, message trace, calendar permissions and mobile email support |
+| [Microsoft 365](./Microsoft365/README.md)             | Microsoft 365 administration, licensing, service health, Defender and user management                                             |
+| [Entra ID](./EntraID/README.md)                       | Identity, MFA, Conditional Access, Entra ID fundamentals and authentication troubleshooting                                       |
+| [Teams](./Teams/README.md)                            | Microsoft Teams meetings, add-ins, permissions, calling and collaboration support                                                 |
+| [Windows](./Windows/README.md)                        | Windows 10/11, Windows Server concepts, DNS, DHCP, Group Policy and endpoint troubleshooting                                      |
+| [PowerShell](./PowerShell/README.md)                  | PowerShell scripts for Microsoft 365, Exchange Online, reporting and administration                                               |
+| [Interview Questions](./InterviewQuestions/README.md) | IT Support, Microsoft 365, Windows, networking and Systems Administration interview preparation                                   |
+| [Diagrams](./Diagrams/README.md)                      | Mermaid diagrams and troubleshooting flows                                                                                        |
 
 ---
 
@@ -49,61 +49,68 @@ The content is organised by technology area. Each section has its own README and
 
 Version 1.1 focuses on:
 
-- Outlook troubleshooting
-- Exchange Online support
-- Shared mailbox issues
-- Mail flow investigation
-- Message trace
-- Calendar permissions
-- Authentication and MFA-related Outlook issues
-- Mobile Outlook support
-- Service desk style documentation
-- GitHub-ready structure with section-level TOCs
+* Outlook troubleshooting
+* Exchange Online support
+* Shared mailbox issues
+* Mail flow investigation
+* Message trace
+* Calendar permissions
+* Authentication and MFA-related Outlook issues
+* Mobile Outlook support
+* Service desk style documentation
+* GitHub-ready structure with section-level TOCs
 
 ---
 
 ## Technical Areas
 
-- IT Support
-- Service Desk
-- Desktop Support
-- Microsoft 365
-- Exchange Online
-- Outlook Troubleshooting
-- Windows 10/11
-- Active Directory / Entra ID fundamentals
-- Windows Server concepts
-- Networking fundamentals
-- Azure Fundamentals
-- PowerShell
-- ICT documentation
+* IT Support
+* Service Desk
+* Desktop Support
+* Microsoft 365
+* Exchange Online
+* Outlook Troubleshooting
+* Windows 10/11
+* Active Directory / Entra ID fundamentals
+* Windows Server concepts
+* Networking fundamentals
+* Azure Fundamentals
+* PowerShell
+* ICT documentation
 
 ---
 
 ## Repository Purpose
 
-This repository is part of my practical portfolio for the Australian IT market. It demonstrates structured troubleshooting, technical documentation, user-focused support, Microsoft 365 and Exchange Online knowledge, Windows and networking fundamentals, PowerShell mindset and clear communication for non-technical users.
+This repository is part of my practical portfolio for the Australian IT market. It demonstrates:
+
+* Structured troubleshooting
+* Technical documentation
+* User-focused support
+* Microsoft 365 and Exchange Online knowledge
+* Windows and networking fundamentals
+* PowerShell and automation mindset
+* Clear communication for non-technical users
 
 ---
 
 ## Author
 
-**Xuan Toan Nguyen**  
-IT Support & Systems Administration Candidate  
+**Xuan Toan Nguyen**
+IT Support & Systems Administration Candidate
 Adelaide, South Australia, Australia
 
 20+ years of enterprise technology experience across banking IT, software support, IT operations, BI systems, remote technology support, automation and cloud/data projects.
 
 Currently studying **Certificate IV in System Administration Support at TAFE SA**.
 
-🥈 **Silver Medalist – WorldSkills Australia South Australian Regional Competition 2026 (Cloud Computing)**
+?? **Silver Medalist � WorldSkills Australia South Australian Regional Competition 2026 (Cloud Computing)**
 
-LinkedIn:  
+LinkedIn:
 [www.linkedin.com/in/toan-nguyen-it-oz](https://www.linkedin.com/in/toan-nguyen-it-oz)
 
-GitHub:  
+GitHub:
 [github.com/toannguyenitoz](https://github.com/toannguyenitoz)
-
 
 ---
 
