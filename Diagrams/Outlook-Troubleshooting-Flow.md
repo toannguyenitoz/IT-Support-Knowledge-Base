@@ -2,16 +2,17 @@
 
 ```mermaid
 flowchart TD
-    A[User reports Outlook issue] --> B{Does OWA work?}
-    B -- Yes --> C[Local Outlook issue]
-    B -- No --> D[Account/Mailbox/Service issue]
-    C --> E[Test Safe Mode]
-    E --> F{Safe Mode works?}
-    F -- Yes --> G[Disable Add-ins]
-    F -- No --> H[Create new Outlook profile]
-    H --> I[Rebuild OST]
-    D --> J[Check license, MFA, mailbox, service health]
-    J --> K[Run Exchange Online checks]
+A[User reports Outlook issue] --> B{Does Outlook on the web work?}
+B -- Yes --> C[Likely local Outlook/client issue]
+B -- No --> D[Likely account/mailbox/service issue]
+C --> E[Test Outlook Safe Mode]
+E --> F{Safe Mode works?}
+F -- Yes --> G[Disable add-ins]
+F -- No --> H[Create new Outlook profile]
+H --> I[Rebuild OST cache]
+D --> J[Check license, MFA and sign-in logs]
+J --> K[Check Exchange Admin Center]
+K --> L[Check Microsoft 365 Service Health]
 ```
 
-[⬅ Back to Main README](../README.md)
+[Back to Diagrams](./README.md)

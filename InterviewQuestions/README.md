@@ -1,12 +1,26 @@
+<a id="top"></a>
+
 # IT Support Interview Questions
 
-This folder is prepared for future expansion.
+Interview preparation for IT Support, Service Desk, Desktop Support and Junior SysAdmin roles.
 
-## Planned Content
+---
 
-- Troubleshooting guides
-- Admin procedures
-- PowerShell examples
-- Real-world IT Support notes
+## Planned Table of Contents
 
-[⬅ Back to Main README](../README.md)
+1. Behavioural questions
+2. Windows troubleshooting
+3. Microsoft 365 questions
+4. Networking fundamentals
+5. Active Directory questions
+6. PowerShell questions
+7. Scenario-based troubleshooting
+8. Australian IT workplace communication
+
+---
+
+## Status
+
+This section is prepared for v2 expansion.
+
+[Back to Main README](../README.md) | [Back to top](#top)

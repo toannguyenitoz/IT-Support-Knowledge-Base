@@ -1,12 +1,19 @@
-# Architecture and Troubleshooting Diagrams
+<a id="top"></a>
 
-This folder is prepared for future expansion.
+# Diagrams
 
-## Planned Content
+Mermaid diagrams and troubleshooting flows for IT Support and Systems Administration documentation.
 
-- Troubleshooting guides
-- Admin procedures
-- PowerShell examples
-- Real-world IT Support notes
+---
 
-[⬅ Back to Main README](../README.md)
+## Table of Contents
+
+| Diagram | Purpose |
+|---|---|
+| [Outlook Troubleshooting Flow](./Outlook-Troubleshooting-Flow.md) | Separate local Outlook issues from mailbox or service issues |
+| [Mail Flow Investigation Flow](./Mail-Flow-Investigation-Flow.md) | Basic Exchange Online mail delivery troubleshooting |
+| [Shared Mailbox Access Flow](./Shared-Mailbox-Access-Flow.md) | Shared mailbox permission and sync troubleshooting |
+
+---
+
+[Back to Main README](../README.md) | [Back to top](#top)

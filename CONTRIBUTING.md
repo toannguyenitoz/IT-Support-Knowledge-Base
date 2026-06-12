@@ -2,9 +2,6 @@
 
 Contributions are welcome.
 
-## Guidelines
+Use a practical IT Support format: overview, symptoms, questions, troubleshooting steps, PowerShell checks, resolution and escalation notes.
 
-- Use clear troubleshooting steps.
-- Include symptoms, causes, resolution, and escalation notes.
-- Keep examples generic and do not include real customer data.
-- Use Markdown tables where helpful.
+Do not include real customer data, passwords, tenant names, internal IP addresses or sensitive information.

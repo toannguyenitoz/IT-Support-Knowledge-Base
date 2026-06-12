@@ -5,9 +5,10 @@ Thumbs.db
 # Logs
 *.log
 
-# PowerShell output
+# PowerShell outputs
 *.csv
 *.xml
 
-# Local notes
+# Local/private files
 _private/
+.env

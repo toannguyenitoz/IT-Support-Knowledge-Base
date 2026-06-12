@@ -1,10 +1,16 @@
 # Changelog
 
-## v1.0.0 - 2026-06-11
+## v1.1.0 - 2026-06-12
 
-- Created GitHub-ready IT Support Knowledge Base.
-- Added complete README with working TOC links.
-- Added 50 Outlook & Exchange Online troubleshooting articles.
-- Added placeholder folders for Microsoft 365, Entra ID, Teams, Windows, PowerShell, Interview Questions, and Diagrams.
-- Added starter PowerShell scripts.
-- Added MIT License and contribution guide.
+- Updated root README as a clean navigation hub.
+- Removed detailed 50-article TOC from root README.
+- Added Outlook section README with TOC for 50 Outlook and Exchange Online articles.
+- Added 50 structured Outlook/Exchange troubleshooting articles.
+- Updated author section for Xuan Toan Nguyen, Adelaide, South Australia.
+- Added PowerShell starter scripts.
+- Added Mermaid troubleshooting diagrams.
+- Added GitHub-ready support files.
+
+## v1.0.0
+
+- Initial repository structure.

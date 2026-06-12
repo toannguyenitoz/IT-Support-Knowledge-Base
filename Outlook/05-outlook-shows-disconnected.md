@@ -1,17 +1,41 @@
+<a id="top"></a>
+
 # 05. Outlook Shows Disconnected
 
-> Category: Outlook / Exchange Online  
-> Difficulty: L1–L2 IT Support / System Administrator  
-> Purpose: Outlook status bar shows Disconnected, Trying to connect, or Need Password.
+**Category:** Connectivity  
+**Audience:** IT Support, Service Desk, Desktop Support, Junior System Administrator  
+**Scenario:** Outlook status bar shows Disconnected, Trying to connect or Need Password.
+
+---
+
+## Overview
+
+This article documents a practical troubleshooting approach for **Outlook Shows Disconnected** in an Outlook / Exchange Online / Microsoft 365 environment.
+
+The goal is to identify whether the issue is caused by local Outlook configuration, corrupted profile/cache, add-in conflicts, authentication/MFA, Microsoft 365 licensing, Exchange Online configuration, mail flow policies, network connectivity or service health.
 
 ---
 
 ## Symptoms
 
-- User reports: **Outlook status bar shows Disconnected, Trying to connect, or Need Password.**
-- Issue may affect one user, multiple users, or an entire department.
-- Outlook desktop may behave differently from Outlook on the web.
-- The issue may be related to profile, network, authentication, permissions, mailbox configuration, or Exchange Online service health.
+Users may report one or more of the following:
+
+- Outlook status bar shows Disconnected, Trying to connect or Need Password.
+- Outlook desktop behaves differently from Outlook on the web.
+- Issue occurs after password change, MFA enrolment, Microsoft 365 migration, Windows update or profile rebuild.
+- Mailbox may work on mobile but not desktop, or the reverse.
+- The issue may affect one user, a shared mailbox, a department or multiple users.
+
+---
+
+## First Response Questions
+
+1. When did the issue start?
+2. Is it happening in Outlook desktop, Outlook on the web or mobile?
+3. Is there an error message?
+4. Is it affecting one mailbox, a shared mailbox or multiple users?
+5. Did anything change recently, such as password, MFA, new device, migration, VPN, add-in or Windows update?
+6. Can the user access Outlook on the web?
 
 ---
 
@@ -19,93 +43,52 @@
 
 | Check | Action |
 |---|---|
-| Scope | Confirm whether one user or many users are affected. |
-| OWA Test | Ask the user to test Outlook on the web: `https://outlook.office.com/mail/` |
-| Network | Confirm internet, VPN, DNS, and proxy status. |
-| Account | Check password, MFA, sign-in logs, and license assignment. |
+| Scope | Confirm whether one user or multiple users are affected. |
+| OWA Test | Test Outlook on the web: `https://outlook.office.com/mail/` |
+| Network | Confirm internet, VPN, proxy and DNS status. |
+| Account | Check password, MFA, sign-in status and Microsoft 365 license. |
 | Client | Test Outlook Safe Mode and a new Outlook profile. |
-| Server | Check Exchange Admin Center, Defender, and Microsoft 365 Service Health. |
+| Cache | Rebuild the OST file if local cache corruption is suspected. |
+| Service | Check Microsoft 365 Service Health for active incidents. |
+| Admin | Use Exchange Admin Center and PowerShell checks where required. |
 
 ---
 
-## Common Causes
+## Troubleshooting Steps
 
-1. Corrupted Outlook profile or local cache.
-2. OST/PST data file issue.
-3. Add-in conflict.
-4. Microsoft 365 authentication or MFA issue.
-5. Mailbox permission or Exchange Online configuration issue.
-6. Network, DNS, proxy, VPN, or firewall restriction.
-7. Microsoft 365 service incident.
-8. Mail flow, spam policy, transport rule, or Defender policy issue.
-
----
-
-## Step-by-Step Troubleshooting
-
-### 1. Confirm the exact issue
-
-Ask the user:
-
-- When did the issue start?
-- Is the issue happening in Outlook desktop, Outlook web, or mobile?
-- Is there an error message?
-- Is the problem affecting all emails or only some senders/recipients?
-- Did anything change recently, such as password reset, MFA setup, device change, migration, or new add-in?
-
----
-
-### 2. Test Outlook on the web
-
-Open:
+### 1. Test Outlook on the web
 
 ```text
 https://outlook.office.com/mail/
 ```
 
-Interpretation:
+- If Outlook on the web works, the mailbox is likely healthy and the issue is probably local Outlook, cache, add-in, profile or device related.
+- If Outlook on the web also fails, investigate account status, license, MFA, mailbox, permissions, Defender, mail flow or service health.
 
-- If OWA works, the mailbox is likely healthy and the issue is probably local Outlook/client/profile/cache.
-- If OWA also fails, investigate account, license, mailbox, service health, or Exchange Online configuration.
-
----
-
-### 3. Check Outlook connection status
-
-In Outlook desktop:
+### 2. Check Outlook connection status
 
 ```text
-Ctrl + Right-click Outlook icon in system tray
+Ctrl + Right-click Outlook icon in the system tray
 → Connection Status
 ```
 
-Look for:
+Look for authentication failures, repeated reconnects, failed connections, incorrect endpoint, high latency, proxy or VPN-related failures.
 
-- Authn errors
-- Failed connections
-- Repeated reconnects
-- Incorrect mailbox/server endpoint
-- Latency or proxy-related failures
-
----
-
-### 4. Start Outlook in Safe Mode
+### 3. Start Outlook in Safe Mode
 
 ```cmd
 outlook.exe /safe
 ```
 
-If the issue disappears in Safe Mode:
+If the problem disappears in Safe Mode:
 
 ```text
 File → Options → Add-ins → COM Add-ins → Go
 ```
 
-Disable add-ins one by one and test again.
+Disable add-ins one by one and test Outlook again.
 
----
-
-### 5. Recreate the Outlook profile
+### 4. Create a new Outlook profile
 
 ```text
 Control Panel
@@ -114,16 +97,9 @@ Control Panel
 → Add
 ```
 
-Recommended approach:
+Create a new profile, add the Microsoft 365 mailbox, set it as default and test Outlook before deleting the old profile.
 
-1. Create a new profile.
-2. Add the Microsoft 365 mailbox.
-3. Set the new profile as default.
-4. Test before deleting the old profile.
-
----
-
-### 6. Rebuild the OST cache
+### 5. Rebuild the OST cache
 
 Close Outlook first.
 
@@ -131,35 +107,13 @@ Close Outlook first.
 %localappdata%\Microsoft\Outlook
 ```
 
-Rename the `.ost` file, for example:
+Rename the `.ost` file and restart Outlook to allow the mailbox to resync.
 
-```text
-outlook-shows-disconnected-old.ost
-```
+### 6. Check Microsoft 365 account and license
 
-Restart Outlook and allow the mailbox to resync.
+In Microsoft 365 Admin Center, verify the user is active, sign-in is not blocked, correct license is assigned, Exchange Online plan is enabled and MFA/Conditional Access is not blocking access.
 
----
-
-### 7. Check mailbox and license status
-
-In Microsoft 365 Admin Center:
-
-```text
-Users → Active users → Select user
-```
-
-Verify:
-
-- User is active.
-- Correct Microsoft 365 license is assigned.
-- Exchange Online plan is enabled.
-- Sign-in is not blocked.
-- MFA or Conditional Access is not blocking access.
-
----
-
-### 8. Check Exchange Admin Center
+### 7. Check Exchange Admin Center
 
 ```text
 Exchange Admin Center
@@ -167,76 +121,57 @@ Exchange Admin Center
 → Mailboxes
 ```
 
-Check:
-
-- Mailbox exists.
-- Mailbox is not hidden from address lists unless intended.
-- Mailbox quota is not exceeded.
-- Email forwarding is not misconfigured.
-- Mailbox permissions are correct.
+Check mailbox existence, GAL visibility, quota, forwarding, shared mailbox permissions and calendar permissions where relevant.
 
 ---
 
 ## PowerShell Checks
 
-Connect to Exchange Online:
-
 ```powershell
 Connect-ExchangeOnline
-```
 
-Check mailbox:
+Get-Mailbox -Identity "user@domain.com" |
+Format-List DisplayName,PrimarySmtpAddress,RecipientTypeDetails,HiddenFromAddressListsEnabled
 
-```powershell
-Get-Mailbox -Identity "user@contoso.com" | Format-List DisplayName,PrimarySmtpAddress,RecipientTypeDetails,HiddenFromAddressListsEnabled
-```
+Get-MailboxStatistics -Identity "user@domain.com" |
+Select DisplayName,TotalItemSize,ItemCount,LastLogonTime
 
-Check mailbox statistics:
+Get-MailboxPermission -Identity "user@domain.com"
 
-```powershell
-Get-MailboxStatistics -Identity "user@contoso.com" | Select DisplayName,TotalItemSize,ItemCount,LastLogonTime
-```
+Get-InboxRule -Mailbox "user@domain.com" |
+Select Name,Enabled,Priority,Description
 
-Check folder permissions when relevant:
-
-```powershell
-Get-MailboxFolderPermission -Identity "user@contoso.com:\Calendar"
-```
-
-Check mobile devices when relevant:
-
-```powershell
-Get-MobileDeviceStatistics -Mailbox "user@contoso.com"
+Get-MailboxFolderPermission -Identity "user@domain.com:\Calendar"
 ```
 
 ---
 
-## Admin Resolution Options
+## Resolution Options
 
-Depending on the root cause:
-
+- Disable problematic Outlook add-ins.
 - Recreate the Outlook profile.
 - Rebuild the OST file.
-- Disable or remove problematic add-ins.
 - Repair Microsoft 365 Apps.
 - Reset password or resolve MFA issue.
-- Assign the correct license.
-- Correct mailbox permissions.
-- Review transport rules or Defender policies.
-- Run message trace.
-- Escalate if Microsoft 365 Service Health shows an active incident.
+- Assign or correct Microsoft 365 license.
+- Correct mailbox or calendar permissions.
+- Review Defender quarantine.
+- Run message trace for mail delivery issues.
+- Review mail flow rules.
+- Escalate to Microsoft 365 Administrator if a tenant-wide or policy issue is found.
 
 ---
 
-## End-User Communication Template
+## User Communication Template
 
 ```text
 Hi [User],
 
-I checked your Outlook issue and verified whether the mailbox works in Outlook on the web. 
-I am now isolating whether this is a local Outlook profile/cache issue or an Exchange Online configuration issue.
+I am investigating your Outlook issue and checking whether it is related to the local Outlook application, mailbox configuration, authentication or Microsoft 365 service health.
 
-I will update you once testing is complete.
+I will test Outlook on the web, review the Outlook profile/cache and verify the mailbox configuration where required.
+
+I will update you once I confirm the root cause or the next troubleshooting step.
 
 Regards,
 IT Support
@@ -246,27 +181,14 @@ IT Support
 
 ## Escalation Notes
 
-Escalate to Level 2 / Microsoft 365 Administrator if:
-
-- Multiple users are affected.
-- Message trace shows failed delivery.
-- Service Health shows an incident.
-- Conditional Access or Defender policy is involved.
-- Mailbox permissions or hybrid Exchange configuration require admin review.
+Escalate to Level 2 / Microsoft 365 Administrator if multiple users are affected, Outlook on the web also fails, message trace shows delivery failure, Defender quarantine or mail flow rules are involved, Conditional Access/MFA policy requires admin review, Service Health shows an active Microsoft 365 incident or hybrid Exchange is involved.
 
 ---
 
-## Related Commands
+## Related Articles
 
-```powershell
-Get-Mailbox "user@contoso.com"
-Get-MailboxStatistics "user@contoso.com"
-Get-CASMailbox "user@contoso.com"
-Get-InboxRule -Mailbox "user@contoso.com"
-Get-MailboxPermission "user@contoso.com"
-```
+[Outlook Index](./README.md) | [Previous: Outlook Search Not Working](./04-outlook-search-not-working.md) | [Next: Outlook Stuck on Loading Profile](./06-outlook-stuck-on-loading-profile.md)
 
 ---
 
-[⬅ Back to Outlook Index](./README.md)
-
+[Back to top](#top)
