@@ -10,9 +10,10 @@ Mermaid diagrams and troubleshooting flows for IT Support and Systems Administra
 
 | Diagram | Purpose |
 |---|---|
-| [Outlook Troubleshooting Flow](./Outlook-Troubleshooting-Flow.md) | Separate local Outlook issues from mailbox or service issues |
-| [Mail Flow Investigation Flow](./Mail-Flow-Investigation-Flow.md) | Basic Exchange Online mail delivery troubleshooting |
-| [Shared Mailbox Access Flow](./Shared-Mailbox-Access-Flow.md) | Shared mailbox permission and sync troubleshooting |
+| [Microsoft 365 Access Troubleshooting Flow](./Microsoft365-Access-Troubleshooting-Flow.md) | User access and licensing troubleshooting |
+| [Entra ID Sign-in Troubleshooting Flow](./EntraID-Signin-Troubleshooting-Flow.md) | Authentication and MFA troubleshooting |
+| [Teams Troubleshooting Flow](./Teams-Troubleshooting-Flow.md) | Teams client, meeting and access troubleshooting |
+| [Windows Network Troubleshooting Flow](./Windows-Network-Troubleshooting-Flow.md) | Basic Windows network troubleshooting |
 
 ---
 

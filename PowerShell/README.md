@@ -2,9 +2,9 @@
 
 # PowerShell Scripts
 
-Starter scripts for Microsoft 365, Exchange Online and IT Support reporting.
+PowerShell starter scripts for Microsoft 365, Exchange Online, Windows support and reporting.
 
-> Always test scripts in a safe environment before using them in production.
+> Always test scripts in a safe lab environment before using them in production.
 
 ---
 
@@ -19,7 +19,9 @@ Starter scripts for Microsoft 365, Exchange Online and IT Support reporting.
 | [Message-Trace-Basic.ps1](./Message-Trace-Basic.ps1) | Basic message trace example |
 | [Get-Mobile-Device-Statistics.ps1](./Get-Mobile-Device-Statistics.ps1) | Review mobile device statistics |
 | [Get-Shared-Mailbox-Permissions.ps1](./Get-Shared-Mailbox-Permissions.ps1) | Review shared mailbox permissions |
-| [Get-Mailbox-Forwarding-Report.ps1](./Get-Mailbox-Forwarding-Report.ps1) | Report mailbox forwarding settings |
+| [Windows-Network-QuickCheck.ps1](./Windows-Network-QuickCheck.ps1) | Basic Windows network checks |
+| [Windows-System-Info.ps1](./Windows-System-Info.ps1) | Collect basic Windows system info |
+| [Restart-Print-Spooler.ps1](./Restart-Print-Spooler.ps1) | Restart print spooler service |
 
 ---
 
