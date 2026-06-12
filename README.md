@@ -10,8 +10,6 @@
 
 A practical IT Support and System Administrator knowledge base focused on **Windows**, **Microsoft 365**, **Exchange Online**, **Outlook**, **Entra ID**, **Teams**, and **PowerShell**.
 
-This v1 release includes a complete GitHub-ready structure and **50 detailed Outlook & Exchange Online troubleshooting articles**.
-
 ---
 
 ## 📑 Main Table of Contents
